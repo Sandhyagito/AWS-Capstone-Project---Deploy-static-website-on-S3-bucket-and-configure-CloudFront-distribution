@@ -1,4 +1,4 @@
-# Deploy-static-website-on-S3-bucket-and-configure-CloudFront-distribution
+![Picture1](https://github.com/Sandhyagito/Deploy-static-website-on-S3-bucket-and-configure-CloudFront-distribution/assets/151674108/549e2658-818b-4790-9b1f-fcb312fbdfc4)# Deploy-static-website-on-S3-bucket-and-configure-CloudFront-distribution
 This repository contains the implementation of a secure, resilient, and globally accessible hosting solution for a static web page using AWS services. It leverages Amazon S3 for hosting, AWS WAF for firewall protection, and Amazon CloudFront for content distribution, geographical restrictions, and low latency access.
 
 **Case Study Problem Statement:**
@@ -37,7 +37,7 @@ Created 2 buckets in 2 different regions
 
 Capstones3ytask1 - Primary bucket in US East N.Virginia
 
-
+![Picture1](https://github.com/Sandhyagito/Deploy-static-website-on-S3-bucket-and-configure-CloudFront-distribution/assets/151674108/33ec3eea-34b8-4321-9ff3-eb4e0d313c3a)
 
 Capstones3ytask2  -Secondary bucket in US East Ohio
 
@@ -80,7 +80,7 @@ Task 3 - Configuring CloudFront for failover
 Create Origin
 
 
-Select Secondary Bucket, select OAI, create OAIa nd yes, update policy
+Select Secondary Bucket, select OAI, create OAI and yes, update the policy
 
 Leave rest as default and create Origin
 
