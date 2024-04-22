@@ -11,7 +11,11 @@ To address these concerns, the organization needs a comprehensive hosting soluti
 
 To address the challenges outlined in the problem statement, the following AWS services can be used to create a secure, resilient, and globally accessible hosting solution for a static web page:
 
-**Amazon S3**:Hosts the static content of the web page and provides high durability and availability
+**Why Combine S3 and CloudFront**?
+
+**Scalability:* S3’s virtually unlimited storage meets CloudFront’s robust CDN network.
+**Performance:* With CloudFront’s global edge locations, content is served from the nearest location, reducing latency.
+**Security:* Control access, integrate with AWS WAF, and deliver content over HTTPS.
 
 **AWS WAF (Web Application Firewall)**: To protect the web page from common web exploits. Protects against common web attacks by controlling incoming and outgoing traffic
 
