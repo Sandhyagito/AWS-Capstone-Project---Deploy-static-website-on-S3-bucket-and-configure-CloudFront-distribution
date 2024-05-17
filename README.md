@@ -2,22 +2,60 @@
 
 This repository contains the implementation of a secure, resilient, and globally accessible hosting solution for a static web page using AWS services. It leverages Amazon S3 for hosting, AWS WAF for firewall protection, and Amazon CloudFront for content distribution, geographical restrictions, and low latency access.
 
-**Case Study Problem Statement:**
+**Objective:**
+The project aims to host a static web page with robust security, failover capabilities, geographical restrictions, and low latency access. The existing infrastructure lacked these features, leading to potential security breaches, downtime, and slow performance.
 
-**An organization requires a solution for hosting a static web page that ensures firewall protection, failover capabilities, geographical restrictions, and low latency access. The current infrastructure lacks the necessary security measures, redundancy, and global accessibility, leading to potential security breaches, downtime, and slow website performance. To address these concerns, the organization needs a comprehensive hosting solution that can provide robust firewall protection, automatic failover mechanisms, the ability to enforce geographical restrictions for access, and ensure low latency access to the web page for users worldwide.**
+**Solution:**
+The solution involves using AWS services to create a secure, resilient, and globally accessible hosting setup:
 
-To address the challenges outlined in the problem statement, the following AWS services can be used to create a secure, resilient, and globally accessible hosting solution for a static web page:
+**Amazon S3:** Hosts the static content with high durability and availability.
+**AWS WAF**: Protects against web exploits and controls traffic.
+**Amazon CloudFront**: Distributes content globally, ensuring low latency and implementing geographical restrictions.
 
-**Why Combine S3 and CloudFront**?
+**Benefits:**
 
-**Scalability:** S3’s virtually unlimited storage meets CloudFront’s robust CDN network.
+**Enhanced Security:** AWS WAF protects against web attacks.
+**Improved Performance:** CloudFront ensures low latency and high transfer speeds.
+**Increased Reliability:** S3 provides high durability and availability.
+**Cost Savings:** Pay-as-you-go pricing, reduced bandwidth costs, and no need for physical infrastructure.
 
-**Performance:** With CloudFront’s global edge locations, content is served from the nearest location, reducing latency.
+**Implementation Steps:**
 
-**Security:** Control access, integrate with AWS WAF, and deliver content over HTTPS.
-A Swift, Safe, and Smart Web Trio”
+**Create S3 Buckets:**
 
-Imagine Amazon S3 as your digital library, where your website’s pages are neatly shelved, ready for visitors. AWS WAF stands as the wise gatekeeper, keeping a watchful eye for any mischief-makers. And Amazon CloudFront? It’s like a speedy delivery service, zipping your website’s content to visitors near and far with no delays. Together, they make sure your website is a pleasant place to visit, always open and always quick.
+Two buckets were created in different regions (US East N. Virginia and US East Ohio) to ensure redundancy.
+The static website's index.html was uploaded to both buckets.
+
+**Create CloudFront Distribution:**
+
+Configured the distribution using the primary S3 bucket as the origin.
+Enabled HTTP to HTTPS redirection and set cache policy to disabled.
+Configure Failover:
+
+Added the secondary bucket as an origin for failover.
+Created an origin group for failover configuration.
+
+**Test Failover:**
+
+Tested website accessibility by deleting the index.html in the primary bucket and ensuring it loaded from the secondary bucket.
+
+**Add WAF to CloudFront:**
+
+Enabled WAF in the CloudFront distribution settings for enhanced security.
+Implement Geo Restriction:
+
+Configured geographical restrictions to block access from specific countries.
+
+**Invalidate Cache:**
+
+Created invalidation to clear cached data in CloudFront.
+
+**Delete Resources:** < BEST PRACTICES>
+
+Disabled and deleted the CloudFront distribution and S3 buckets to clean up resources.
+
+**Conclusion**:
+The project successfully deployed a static website with enhanced security, reliability, and performance using Amazon S3, CloudFront, and AWS WAF, addressing the organization’s initial infrastructure shortcomings.
 
 **Wrapping Up**🎁
 Marrying S3 with CloudFront is like bringing together Batman and Robin 🦸‍♂️🦸‍♂️ — individually powerful, but together, they’re unstoppable. With enhanced speed, security, and scalability, it’s a match made in the cloud.
