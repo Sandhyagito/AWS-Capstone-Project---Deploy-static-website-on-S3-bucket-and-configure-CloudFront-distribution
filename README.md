@@ -21,3 +21,5 @@ Imagine Amazon S3 as your digital library, where your website’s pages are neat
 
 **Wrapping Up**🎁
 Marrying S3 with CloudFront is like bringing together Batman and Robin 🦸‍♂️🦸‍♂️ — individually powerful, but together, they’re unstoppable. With enhanced speed, security, and scalability, it’s a match made in the cloud.
+
+![diagram-export-5-2-2024-5_52_53-PM](https://github.com/Sandhyagito/AWS-Project--Deploy-static-website-on-S3-bucket-and-configure-CloudFront-distribution/assets/151674108/4274c1be-2467-4439-aa0e-74ee96ad61b2)
